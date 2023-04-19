@@ -65,7 +65,12 @@ function SetRow(set) {
   )
 }
 
-export default function TreatmentTable() {
+export default function TreatmentTable(plate) {
+
+  // const setRows = plate.sets.map(set =>
+  //   <SetRow set={set}></SetRow>
+  // );
+
   return <Table>
     <thead>
       <tr>

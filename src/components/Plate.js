@@ -6,13 +6,13 @@ import Col from 'react-bootstrap/Col';
 
 
 const WellCircle = styled.div`
-  border-radius: 50%; 
   background-color: pink;
   width: 30px;
   height: 30px;
   font-size: 16px;
   margin: auto;
   padding: 0px 0px;
+  border: 1px solid
 `;
 
 const PlateLabel = styled.p`

@@ -1,20 +1,20 @@
-export const gcprSets = [
-  {
+export const gcprSets = {
+  "1": {
     id: "1",
     name: "Set_01",
     gcprs: ["ADRA1A", "ADRA1B", "ADRA1D", "ADRA2A", "ADRA2B", "ADRA2C", "ADRB1", "ADRB2", "ADRB3", "HTR1A", "HTR1B", "HTR1D"]
   },
-  {
+  "2": {
     id: "2",
     name: "Set_02",
     gcprs: ["ADRA1A", "ADRA1B", "ADRA1D", "ADRA2A", "ADRA2B", "ADRA2C", "ADRB1", "ADRB2", "ADRB3", "HTR1A", "HTR1B", "HTR1D"]
   },
-  {
+  3: {
     id: "3",
     name: "Set_03",
     gcprs: ["ADRA1A", "ADRA1B", "ADRA1D", "ADRA2A", "ADRA2B", "ADRA2C", "ADRB1", "ADRB2", "ADRB3", "HTR1A", "HTR1B", "HTR1D"]
   }
-]
+}
 
 export const treatments = [
   {

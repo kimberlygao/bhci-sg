@@ -49,7 +49,17 @@ const SetInput = styled.input`
 const Select = styled.select`
 `
 
-export default function SetMenu(sets) {
+export default function SetMenu(plateSets, allSets) {
+  // const setList = allSets.map(s =>
+  //   <SetListItem>
+  //     <SetInput type='radio' value={s.setID} name='radio' id='radio1'/>
+  //     <SetLabel for='radio1'> 
+  //     <SetName>{allSets[s.setID].name}</SetName>
+  //     <SetLoc>[A, 1-12]</SetLoc> 
+  //     <ColorTag> </ColorTag>
+  //     </SetLabel>
+  //   </SetListItem>
+  // )
   return (
     <ListMenu>
       <SetListItem>

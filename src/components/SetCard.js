@@ -75,8 +75,6 @@ const Select = styled.select`
   height: 40px;
   padding: 8px 12px;
   border-radius: 4px;
-
-
 `;
 
 const Option = styled.option`

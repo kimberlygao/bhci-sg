@@ -3,8 +3,7 @@ import './App.css';
 import React, { Component }  from 'react';
 import Plate from './components/Plate.js';
 import PlateMenu from './components/PlateMenu.js';
-
-import TreatmentTable from './components/TreatmentTable.js';
+import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -17,8 +16,12 @@ import sideBar from './img/sideBar.svg';
 import navBar from './img/navBar.svg';
 import pageInfo from './img/pageInfo.svg';
 import plateBar from './img/plateBar.svg';
+import {Text20SB} from './components/TextStyles';
 
 
+const GrayDiv = styled.div`
+  background: #F4F4F5;
+`
 
 function App() {
   return (
@@ -37,16 +40,25 @@ function App() {
            
             <Container fluid>
               <Row>
-                <Col>
+                <Col className="p-0">
                 <img src={plateBar}></img>
                 </Col>
-                <Col>
+                <Col className="p-0">
                   <PlateMenu></PlateMenu>
                 </Col>
               </Row>
+
+                <Row>
+                  <Text20SB>Plate_01</Text20SB>
+                  <Col className="p-0">
+                    <SetMenu plateSets={plates[0].sets} allSets={gcprSets}></SetMenu>
+                  </Col>
+                  <Col className="p-0"><Plate></Plate></Col>
+                  <Col className="p-0"  ><SetCard></SetCard></Col>
+                </Row>
+              
             </Container>
-            <SetMenu plateSets={plates[0].sets} allSets={gcprSets}></SetMenu>
-            <SetCard></SetCard>
+            
           </Col>
         </Row>
       </Container>

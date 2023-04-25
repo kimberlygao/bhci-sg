@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import status00 from '../img/status00.svg'
 import check from '../img/check.svg';
-import { Label12, Text12M, Text20SB} from './TextStyles';
-
-
+import { Label12, Text12M, Icon24} from './TextStyles';
 
 const CardList = styled.ul`
   list-style: none;
@@ -24,12 +22,8 @@ const CardLabel = styled.label`
   padding: 20px;
   text-align: left;
   margin: 0px 20px 0px 0px;
+  background: white;
 `
-
-const PlateStatusImg = styled.img`
-  width: 24px;
-  height: 24px;
-`;
 
 const CardName = styled.span`
   font-weight: 600;
@@ -76,7 +70,7 @@ function PlateCard(plateSets, allSets) {
       <Card>
           <CardInput type='radio' value='1' name='radio' id='radio1'/>
           <CardLabel for='radio1'> 
-            <PlateStatusImg src={status00}></PlateStatusImg>
+            <Icon24 src={status00}></Icon24>
             <CardName>Plate_01</CardName>
             <table>
             <thead>
@@ -105,11 +99,12 @@ function PlateCard(plateSets, allSets) {
 
 export default function PlateMenu() {
   return (
+    <form>
     <CardList>
       <Card>
-          <CardInput type='radio' value='1' name='radio' id='radio1'/>
-          <CardLabel for='radio1'> 
-            <PlateStatusImg src={status00}></PlateStatusImg>
+          <CardInput type='radio' value='1' name='radio' id='plate1'/>
+          <CardLabel for='plate1'> 
+            <Icon24 src={status00}></Icon24>
             <CardName>Plate_01</CardName>
             <table>
             <thead>
@@ -133,9 +128,9 @@ export default function PlateMenu() {
         </CardLabel>
       </Card>
       <Card>
-          <CardInput type='radio' value='3' name='radio' id='radio3'/>
-          <CardLabel for='radio3'> 
-            <PlateStatusImg src={status00}></PlateStatusImg>
+          <CardInput type='radio' value='3' name='radio' id='plate2'/>
+          <CardLabel for='plate2'> 
+            <Icon24 src={status00}></Icon24>
             <CardName>Plate_01</CardName>
             <table>
             <thead>
@@ -159,9 +154,9 @@ export default function PlateMenu() {
         </CardLabel>
       </Card>
       <Card>
-          <CardInput type='radio' value='2' name='radio' id='radio2'/>
-          <CardLabel for='radio2'> 
-            <PlateStatusImg src={status00}></PlateStatusImg>
+          <CardInput type='radio' value='2' name='radio' id='plate3'/>
+          <CardLabel for='plate3'> 
+            <Icon24 src={status00}></Icon24>
             <CardName>Plate_01</CardName>
             <table>
             <thead>
@@ -180,10 +175,10 @@ export default function PlateMenu() {
               <ButtonIcon src={check}></ButtonIcon>
               Mark as Pipetted
             </PipettedButton>
-          </div>
-         
+          </div>    
         </CardLabel>
       </Card>
     </CardList>
+    </form>
   )
 }

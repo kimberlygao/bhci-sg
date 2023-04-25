@@ -1,22 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Text20SB, Label14, Icon24 } from './TextStyles';
+import status00 from '../img/status00.svg'
 
 
-const Card = styled.div`  
-  width: 315px;
-`
+const Card = styled.div`
+  text-align: left;
+  width: 330px;
+`;
 
-const CardTop = styled.div`
-  width: 315px;
-  height: 338px;
+const ListMenu = styled.ul`
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 20px 12px;
-  gap: 10px;
-  background-color: #EBEBEB;
-  border-radius: 8px 8px 0px 0px;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
 `;
 
 const GCPRList = styled.div`
@@ -31,46 +29,46 @@ const GCPRList = styled.div`
   gap: 2px;
 `;
 
-const GCPR = styled.p`
-  color: gray;
-  font-size: 14px;
-  margin-bottom: 2px;
-`;
+const SetLabel = styled.label`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 155px;
+`
+const SetName = styled.span`
+  padding: 0px 5px;
+`
+const SetInput = styled.input`
+  visibility: hidden;
 
-const CardTitle = styled.div`
-  text-align: left;
-`;
+  & + ${SetLabel} {
+    border: 1px solid #E4E4E6;
+    border-radius: 4px;
+    padding: 8px 20px;
+  }
 
-const CardT = styled.p`
-  font-weight: 600;
-  font-size: 24px;
-  margin-bottom: 5px;
-`;
-
-const CardForm = styled.form`
-  border: 1px solid #DFE3ED;
-  border-top: none;
-  width: 315px;
-  padding: 20px;
+  &:checked + ${SetLabel} {
+    background: #E4E4E6;
+  }
 `
 
 const FormGroup = styled.div`
-  margin-bottom: 12px;
+  margin: 12px 12px 12px 0px;
 `;
 
 const Label = styled.label`
   font-size: 16px;
   line-height: 19px;
-  text-align: right;
+  text-align: left;
+  width: 82px;
   display: inline-block;
-  width: 100px;
-  margin-right: 12px;
+  margin-right: 20px;
 `;
 
 const Select = styled.select`
   font-weight: 500;
   font-size: 16px;
-  width: 140px;
+  width: 200px;
   border: 1px solid #E5E5EC;
   height: 40px;
   padding: 8px 12px;
@@ -81,7 +79,7 @@ const Option = styled.option`
 `;
 
 const Input = styled.input.attrs({ type: 'number', placeholder:"-" })`
-  width: 140px;
+  width: 200px;
   border: 1px solid #E5E5EC;
   height: 40px;
   padding: 8px 12px;
@@ -90,7 +88,7 @@ const Input = styled.input.attrs({ type: 'number', placeholder:"-" })`
 `;
 
 const NumInput = styled.input.attrs({ type: 'number', placeholder:"-" })`
-  width: 140px;
+  width: 200px;
   border: 1px solid #E5E5EC;
   height: 40px;
   padding: 8px 12px;
@@ -120,42 +118,64 @@ export default function SetCard(set) {
   );
 
   const gcprTags = gcprs.map(g =>
-    <GCPR>{g}</GCPR>
+    <td><Label14>{g}</Label14></td>
   );
 
   return (
     <Card>
-      <CardTop>
-        <GCPRList>
+       <Text20SB>Set_01: A1-A6</Text20SB>
+       <GCPRList>
           {gcprTags}
         </GCPRList>
-        <CardTitle>
-          <CardT>Set_01</CardT>
-          <CardT>-</CardT>
-        </CardTitle>
-      </CardTop>
-      <CardForm>
-        <FormGroup>
+        <form>
+    <ListMenu>
+      <li>
+          <SetInput type='radio' value='1' name='radio1' id='single' checked="checked"/>
+          <SetLabel for='single'> 
+            <Icon24 src={status00}></Icon24>
+            <SetName>Single</SetName>
+          </SetLabel>
+      </li>
+      <li>
+          <SetInput type='radio' value='2' name='radio1'  id='double'/>
+          <SetLabel for='double'>
+          <Icon24 src={status00}></Icon24>
+            <SetName>Multiple</SetName>
+          </SetLabel>
+      </li>
+    </ListMenu>
+    <FormGroup>
           <Label>Treatment</Label>
           <Select>{ts}</Select>
-        </FormGroup>
-        <FormGroup>
-          <Label>Start Value</Label>
-          <Input></Input>
-        </FormGroup>
-        <FormGroup>
-          <Label>N-fold</Label>
-          <NumInput></NumInput>
-        </FormGroup>
-        <FormGroup>
-          <Label>Direction</Label>
-          <Select>
-            <Option>Left</Option>
-            <Option>Right</Option>
-          </Select>
-        </FormGroup>
-        
-      </CardForm>
+    </FormGroup>
+    <FormGroup>
+      <Label>Start Value</Label>
+      <Input></Input>
+    </FormGroup>
+    <FormGroup>
+      <Label>N-fold</Label>
+      <NumInput></NumInput>
+    </FormGroup>
+    <FormGroup>
+      <Label>Direction</Label>
+      <ListMenu>
+      <li>
+          <SetInput type='radio' value='3' name="dir" id='left'/>
+          <SetLabel for='left'> 
+            <Icon24 src={status00}></Icon24>
+            <SetName>Left</SetName>
+          </SetLabel>
+      </li>
+      <li>
+          <SetInput type='radio' value='4' name="dir"   id='right'/>
+          <SetLabel for='right'>
+          <Icon24 src={status00}></Icon24>
+            <SetName>Right</SetName>
+          </SetLabel>
+      </li>
+    </ListMenu>
+    </FormGroup>
+    </form>
     </Card>
     
   )

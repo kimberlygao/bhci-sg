@@ -1,50 +1,73 @@
 import styled from 'styled-components';
-import React, { Component }  from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import GCPR from './TextStyles.js';
+import React from 'react';
 
 
-const WellCircle = styled.div`
-  background-color: pink;
-  width: 30px;
+const WellInput = styled.input`
+  width: 60px;
+  margin: 0;
+  margin-bottom: 1px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1px 15px;
   height: 30px;
-  font-size: 16px;
-  margin: auto;
-  padding: 0px 0px;
-  border: 1px solid
+  border: 0;
+
 `;
 
-const PlateLabel = styled.p`
-  padding: 0px 0px;
-  margin: auto;
+const Td = styled.td`
+  padding: 0;
+  border: 2px solid #DFE3ED;
+  border-collapse: collapse;
+`
+const CtrlWell = styled.td`
+  padding: 1px 15px;
+  background: #F1F1F5;
+  border-radius: 4px;
+  color: #8A8A8E;
+  height: 60px;
+`
+
+const PlateLabel = styled.th`
   font-weight: 600;
+  width: 40px;
+  height: 60px;
+  background: #F6F6F6;
+  margin: 5px;
+  border: 2px solid #DFE3ED;
 `;
+
+const PlateTable = styled.table`
+  // border-spacing: 0; !important;
+  background: #DFE3ED;
+  border: 2px solid #DFE3ED;
+`
 
 
 function Label(char) {
-  return <Col><PlateLabel>{char}</PlateLabel></Col>
+  return <PlateLabel>{char}</PlateLabel>
 }
 
 function ColLabels () {
-  const row = [<Col></Col>];
+  const row = [<PlateLabel></PlateLabel>];
   for (let i = 0; i < 12; i++) {
       row.push(Label(i+1));
   }
-  return <Row>{row}</Row>;
+  return <tr>{row}</tr>;
 }
 
 function Well() {
-  return <Col><WellCircle>5ml</WellCircle></Col>
+  return <Td><WellInput type="text" value="-"></WellInput><WellInput type="text" value="0"></WellInput></Td>
 }
 
+
+
 function PlateRow(rowLabel) {
-  const row = [<Col><PlateLabel>{rowLabel}</PlateLabel></Col>];
-  for (let i = 0; i < 12; i++) {
+  const row = [<PlateLabel>{rowLabel}</PlateLabel>];
+  for (let i = 0; i < 11; i++) {
       row.push(Well());
   }
-  return <Row>{row}</Row>;
+  row.push(<td>{<CtrlWell>CTRL</CtrlWell>}</td>)
+  return <tr>{row}</tr>;
 }
 
 
@@ -54,5 +77,8 @@ export default function Plate() {
   for (let i = 0; i < 8; i++) {
       rows.push(PlateRow(rowLabels[i]));
   }
-  return <Container>{rows}</Container>;
+  return (
+    <PlateTable>{rows}</PlateTable>
+  );
+
 }

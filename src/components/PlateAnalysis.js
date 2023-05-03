@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 
-import { Icon24 } from '../components-styled/TextStyles';
-import { Toggle, Input, Label, Name } from '../components-styled/SelectStyles';
-import microscope from '../img/icons/microscope.svg'
-import heatmap from '../img/icons/heatmap.svg'
+import analysisLeftMenu from '../img/static/analysisLeftMenu.svg'
+import percentageToggle from '../img/static/percentageToggle.svg'
 import Plate02 from './Plate02';
-import {gcprSets, treatments, plateTypes} from '../data.js'
 import WellAnalysisCard from "./WellAnalysis";
 import { Row, Col } from "../components-styled/DivStyles";
+import { Img } from "../components-styled/ImgStyles";
 
 
 export default function PlateAnalysis(props) {
@@ -26,7 +24,15 @@ export default function PlateAnalysis(props) {
   return (
     <div style={{marginLeft: "20px"}}>
       <Row>
+        <Col style={{marginRight: "38px"}}>
+          <Img src={analysisLeftMenu}></Img>
+        </Col>
         <Col>
+          <Row style={{justifyContent: "end", padding: "12px"}}>
+            <div style={{float: "right"}}>
+              <Img src={percentageToggle}></Img>
+            </div>
+          </Row>
           <Plate02 plate={props.plate} fun={onOptionChange} selectedOption={selectedWell}></Plate02>
         </Col>
         <Col>

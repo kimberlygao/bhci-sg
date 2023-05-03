@@ -36,10 +36,20 @@ const PlateLabel = styled.th`
   border: 2px solid #DFE3ED;
 `;
 
+const RowLabel = styled.th`
+  font-weight: 600;
+  height: 40px;
+  width: 60px;
+  background: #F6F6F6;
+  margin: 5px;
+  border: 2px solid #DFE3ED;
+`
+
 const PlateTable = styled.table`
   // border-spacing: 0; !important;
   background: #DFE3ED;
-  border: 2px solid #DFE3ED;
+  // border: 2px solid #DFE3ED;
+  width: 800px;
 `
 
 
@@ -62,7 +72,7 @@ function Well() {
 
 
 function PlateRow(rowLabel) {
-  const row = [<PlateLabel>{rowLabel}</PlateLabel>];
+  const row = [<RowLabel>{rowLabel}</RowLabel>];
   for (let i = 0; i < 11; i++) {
       row.push(Well());
   }

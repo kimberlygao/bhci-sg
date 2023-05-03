@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text20SB, Label14, Icon24 } from './TextStyles';
+import { Text20SB, Label14, Icon24 } from '../components-styled/TextStyles';
 import status00 from '../img/status00.svg'
 
 

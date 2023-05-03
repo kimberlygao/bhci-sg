@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import status00 from '../img/status00.svg'
-import check from '../img/check.svg';
-import { Label12, Text12M, Icon24} from './TextStyles';
+import status02 from '../img/status02.svg'
+import check from '../img/icons/check.svg';
+import checkCircle from '../img/icons/checkCircle.svg';
+
+import { Label12, Text12M, Icon24} from '../components-styled/TextStyles';
 
 const CardList = styled.ul`
   list-style: none;
@@ -54,6 +57,16 @@ const PipettedButton = styled.button`
   float: right;
 `
 
+const CompleteButton = styled.button`
+  width: 171px;
+  height: 36px;
+  background-color: white;
+  color: #0040DD;
+  float: right;
+  border: 2px solid white;
+  text-align: right;
+`
+
 const ButtonIcon = styled.img`
   width: 20px;
   height: 20px;
@@ -65,12 +78,26 @@ const Td = styled.td`
   vertical-align: top;
 `
 
+function PlateStatusButton(status) {
+  if (status === "0") {
+    return ( <PipettedButton>
+              <ButtonIcon src={checkCircle}></ButtonIcon>
+              Mark as Pipetted
+            </PipettedButton>)
+  } else {
+    return ( <CompleteButton>
+                <ButtonIcon src={check}></ButtonIcon>
+                Complete
+              </CompleteButton>)
+  }
+}
+
 function PlateCard(plateSets, allSets) {
   return (
       <Card>
           <CardInput type='radio' value='1' name='radio' id='radio1'/>
           <CardLabel for='radio1'> 
-            <Icon24 src={status00}></Icon24>
+            <Icon24 src={status02}></Icon24>
             <CardName>Plate_01</CardName>
             <table>
             <thead>
@@ -85,10 +112,7 @@ function PlateCard(plateSets, allSets) {
             </tbody>
           </table>
           <div>
-            <PipettedButton>
-              <ButtonIcon src={check}></ButtonIcon>
-              Mark as Pipetted
-            </PipettedButton>
+              <PlateStatusButton status={"1"}></PlateStatusButton>
           </div>
          
         </CardLabel>
@@ -104,7 +128,7 @@ export default function PlateMenu() {
       <Card>
           <CardInput type='radio' value='1' name='radio' id='plate1'/>
           <CardLabel for='plate1'> 
-            <Icon24 src={status00}></Icon24>
+            <Icon24 src={status02}></Icon24>
             <CardName>Plate_01</CardName>
             <table>
             <thead>
@@ -119,10 +143,7 @@ export default function PlateMenu() {
             </tbody>
           </table>
           <div>
-            <PipettedButton>
-              <ButtonIcon src={check}></ButtonIcon>
-              Mark as Pipetted
-            </PipettedButton>
+          <PlateStatusButton status={"1"}></PlateStatusButton>
           </div>
          
         </CardLabel>
@@ -131,7 +152,7 @@ export default function PlateMenu() {
           <CardInput type='radio' value='3' name='radio' id='plate2'/>
           <CardLabel for='plate2'> 
             <Icon24 src={status00}></Icon24>
-            <CardName>Plate_01</CardName>
+            <CardName>Plate_02</CardName>
             <table>
             <thead>
               <th><Label12>Number</Label12></th>
@@ -157,7 +178,7 @@ export default function PlateMenu() {
           <CardInput type='radio' value='2' name='radio' id='plate3'/>
           <CardLabel for='plate3'> 
             <Icon24 src={status00}></Icon24>
-            <CardName>Plate_01</CardName>
+            <CardName>Plate_03</CardName>
             <table>
             <thead>
               <th><Label12>Number</Label12></th>

@@ -1,7 +1,14 @@
-import React from 'react';
+/*
+  Plate02.js
+  Component for only the plate in image analysis (status 002)
 
+  Uses a "table" (css grid) to render inputs & labels for each well
+  Uses styled-components from PlateStyles.
+*/
+import React from 'react';
 import {WellDiv, Text, WellInput, WellLabel, CtrlWell, ColLabel, RowLabel, PlateTable} from '../components-styled/PlateStyles'
 
+// returns the first row of column labels
 function ColLabels () {
   const row = [<ColLabel key="0" style={{width: "40px"}}><Text></Text></ColLabel>];
   for (let i = 0; i < 12; i++) {
@@ -10,6 +17,8 @@ function ColLabels () {
   return row;
 }
 
+// returns color of the heat map
+// num: heat value
 export function getColor(num) {
   switch (true) {
     case num > 70:
@@ -31,6 +40,8 @@ export function getColor(num) {
   }
 }
 
+// returns a single well input/label for table
+// id: well position, fun: function to control what well is selected, color: heat map color
 function Well(id, fun, color) {
   return (
     <WellDiv key={id}>
@@ -41,6 +52,8 @@ function Well(id, fun, color) {
   )
 }
 
+// returns a row of wells starting with the label in the leftmost position
+// rowLabel: row letter, fun: function to control what well is selected, wells: dictionary of wells
 function PlateRow(rowLabel, fun, wells) {
   const row = [<RowLabel key={"r" + rowLabel}><Text>{rowLabel}</Text></RowLabel>];
   for (let i = 0; i < 11; i++) {
@@ -62,6 +75,8 @@ function PlateRow(rowLabel, fun, wells) {
   return row;
 }
 
+// returns a plate in the image analysis state
+// props - fun: function to control what well is selected, plate: plate to render
 export default function Plate02(props) {
   const body = []
   const rowLabels = ["A", "B", "C", "D", "E", "F", "G", "H"]

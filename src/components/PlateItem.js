@@ -1,16 +1,25 @@
-import React from 'react';
+/*
+  PlateItem.js
+  Component for one plate in a plate selection
 
+  Uses SelectStyles for rendering selection styles with input/label
+  Parent component in PlateArea.js/PlateActionArea
+*/
+
+
+import React from 'react';
 import {SelectItem, ItemLabel, ItemInput} from '../components-styled/SelectStyles';
 import { Icon20, Icon24 } from '../components-styled/ImgStyles';
 import {Button00, Button02} from '../components-styled/ButtonStyles';
 import { Text20SB, Label12, Text12M, Blue16, Blue16SB} from '../components-styled/TextStyles';
 import {Td} from '../components-styled/TableStyles';
-
 import status00 from '../img/status00.svg'
 import status02 from '../img/status02.svg'
 import check from '../img/icons/check.svg';
 import checkCircle from '../img/icons/checkCircle.svg';
 
+// returns the corresponding status icon
+// given a status
 function StatusIcon(status) {
   if (status.status === "00") {
     return (<Icon24 src={status00} style={{marginBottom: "12px"}}></Icon24>)
@@ -19,6 +28,8 @@ function StatusIcon(status) {
   }
 }
 
+// returns the corresponding status button
+// given a status
 function StatusButton(status) {
   if (status.status === "00") {
     return ( <Button00>
@@ -33,6 +44,8 @@ function StatusButton(status) {
   }
 }
 
+// returns one plate represented as a selection item
+// props - plate
 export default function PlateItem(props) {
   let p = props.plate
   return (

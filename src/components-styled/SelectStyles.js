@@ -1,5 +1,11 @@
+/*
+  SelectStyles.js
+  styled components for selection menus - plate items, toggle buttons
+*/
+
 import styled from 'styled-components';
 
+// list for select items
 export const SelectList = styled.ul`
   list-style: none;
   display: flex;
@@ -8,10 +14,12 @@ export const SelectList = styled.ul`
   padding: 0px;
 `;
 
+// select item - groups label and input
 export const SelectItem = styled.li`
 
 `
 
+// item label - all item information
 export const ItemLabel = styled.label`
   display: flex;
   flex-direction: column;
@@ -26,6 +34,7 @@ export const ItemLabel = styled.label`
   }
 `
 
+// item input - clickable ability
 export const ItemInput = styled.input`
   visibility: hidden;
 
@@ -41,6 +50,7 @@ export const ItemInput = styled.input`
   }
 `
 
+// toggle button group
 export const Toggle = styled.ul`
   list-style: none;
   display: flex;
@@ -49,17 +59,22 @@ export const Toggle = styled.ul`
   padding: 0px;
 `;
 
+// label for toggle button
 export const Label = styled.label`
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 155px;
 `
+
+// name in toggle - used in label
 export const Name = styled.span`
   padding: 0px 5px;
   font-size: 16px;
   font-weight: 600;
 `
+
+// input for label
 export const Input = styled.input`
   visibility: hidden;
 
@@ -75,10 +90,12 @@ export const Input = styled.input`
   }
 `
 
+// form group for dropdown
 export const FormGroup = styled.div`
   margin: 12px 12px 12px 0px;
 `;
 
+// label for dropdown
 export const FormLabel = styled.label`
   font-size: 16px;
   line-height: 19px;
@@ -88,6 +105,7 @@ export const FormLabel = styled.label`
   margin-right: 20px;
 `;
 
+// dropdown selection
 export const DropdownSelect = styled.select`
   font-weight: 500;
   font-size: 16px;
@@ -98,6 +116,7 @@ export const DropdownSelect = styled.select`
   border-radius: 4px;
 `;
 
+// options for dropdown
 export const Option = styled.option`
 `;
 

@@ -1,3 +1,9 @@
+/*
+  TextStyles.js
+  various text styled components
+  naming - color|font|font-weight
+*/
+
 import styled from 'styled-components';
 
 export const Label12 = styled.p`
@@ -107,3 +113,9 @@ export const Icon24 = styled.img`
   height: 24px;
 `;
 
+export const ColorTag = styled.span`
+  background-color: pink;
+  padding: 6px 2px; 
+  font-size: 0px;
+  margin: 0px 5px;
+`;

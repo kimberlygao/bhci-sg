@@ -1,20 +1,26 @@
+/*
+  WellAnalysis.js
+  Component for well image analysis on the right side of plate analysis
+
+  Uses styled-components from SelectStyles for the toggle buttons
+  Parent component in PlateAnalysis.js
+  Child component is SpotGrid.js
+*/
+
 import React, {useState} from 'react';
 import {Text14SB, Text20SB, Text16, White14, Label16, Label16SB, Text16M, Label14, Custom40B} from '../components-styled/TextStyles'
-
 import {gcprs, gcprSets, treatments} from '../data.js'
 import { Row } from '../components-styled/DivStyles';
-import { Img, Icon24 } from '../components-styled/ImgStyles';
+import { Icon24 } from '../components-styled/ImgStyles';
 import { Toggle, Input, Label, Name, FormGroup, DropdownSelect, Option} from '../components-styled/SelectStyles';
 import microscope from '../img/icons/microscope.svg'
 import heatmap from '../img/icons/heatmap.svg'
-
 import { ButtonFillSm, ButtonFillSq } from '../components-styled/ButtonStyles';
-
 import SpotGrid from './SpotGrid';
 import { getColor } from './Plate02';
 
-
-
+// returns the controls when clicking on an image
+// not fully developed – currently just a button
 function ImageControls() {
   return (
     <div style={{marginBottom: "20px"}}>
@@ -23,6 +29,9 @@ function ImageControls() {
   )
 }
 
+// returns the information for one spot
+// props - spotNum: index of well, well: well that spotNum is contained int 
+// called when a spot in the grid is clicked on
 function SpotInfo(props) {
   console.log(props.spotNum)
 
@@ -53,6 +62,8 @@ function SpotInfo(props) {
   )
 }
 
+// returns the controls at the bottom of well analysis
+// props – plate: current plate, well: current well
 function ReportControls(props) {
   return (
     <div style={{marginTop: "16px"}}>
@@ -76,6 +87,9 @@ function ReportControls(props) {
   )
 }
 
+// returns the component for entire right hand well analysis
+// props - well: current selected well, plate: plate that well is contained in
+// useState for selected spot to look at
 export default function WellAnalysisCard(props) {
   let well = props.well
   if (props.well == null) {

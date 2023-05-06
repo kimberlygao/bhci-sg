@@ -1,21 +1,21 @@
+/*
+  DivStyles.js
+  styled components for layout – mainly rows and columns
+*/
+
 import styled from 'styled-components';
 
-
-export const GrayDiv = styled.div`
-  background: #F4F4F5;
-`
-
-export const Div100 = styled.div`
-  width: 100%;
-`
-
+// row div
 export const Row = styled.div`
   display: flex;
   width: 100%;
 `
-export const RowTopBorder = styled.div`
+
+// row div but with gray top border for visual divider
+export const RowTopBorder = styled(Row)`
   border-top: 1px solid #C5C5C8;
 `
 
+// col div to use in row
 export const Col = styled.div`
 `

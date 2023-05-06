@@ -1,5 +1,14 @@
-import React, { useState } from "react";
+/*
+  PlateAnalysis.js
+  Component for entire image analysis area
 
+  useState for selected well
+  Parent component is PlateArea.js/PlateActionArea
+  Child components Plate02 and WellAnalysisCard
+
+*/
+
+import React, { useState } from "react";
 import analysisLeftMenu from '../img/static/analysisLeftMenu.svg'
 import percentageToggle from '../img/static/percentageToggle.svg'
 import Plate02 from './Plate02';
@@ -8,6 +17,8 @@ import { Row, Col } from "../components-styled/DivStyles";
 import { Img } from "../components-styled/ImgStyles";
 
 
+// returns entire plate analysis area
+// props: plate - selected plate (should be status002)
 export default function PlateAnalysis(props) {
 
   const [selectedWell, setSelectedWell] = useState(null)
@@ -25,7 +36,7 @@ export default function PlateAnalysis(props) {
     <div style={{marginLeft: "20px"}}>
       <Row>
         <Col style={{marginRight: "38px"}}>
-          <Img src={analysisLeftMenu}></Img>
+          <Img style={{marginTop: "12px"}} src={analysisLeftMenu}></Img>
         </Col>
         <Col>
           <Row style={{justifyContent: "end", padding: "12px"}}>

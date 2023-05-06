@@ -1,5 +1,11 @@
+/*
+  WellSpotStyles.js
+  styled components for well spot analysis
+*/
+
 import styled from 'styled-components';
 
+// label for spot info
 export const GCPRSpotLabel = styled.label`
   background: white;
   width: 75px;
@@ -9,6 +15,7 @@ export const GCPRSpotLabel = styled.label`
   justify-content: center;
 `
 
+// input for spot selection
 export const GCPRSpotInput = styled.input`
   visibility: hidden;
   height: 0;
@@ -27,6 +34,7 @@ export const GCPRSpotInput = styled.input`
   }
 `;
 
+// spot group for label and input
 export const GCPRSpotDiv = styled.div`
   width: 75px;
   height: 75px;
@@ -36,6 +44,7 @@ export const GCPRSpotDiv = styled.div`
   justify-content: center;
 `
 
+// spot table grid
 export const SpotTable = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 75px);

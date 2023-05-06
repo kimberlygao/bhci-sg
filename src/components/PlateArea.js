@@ -1,3 +1,13 @@
+/*
+  PlateActionArea.js
+  Component for entire image analysis area
+
+  useState for selected well
+  Child components Plate02 and WellAnalysisCard
+
+*/
+
+
 import React, { useState } from "react";
 import plateBar from '../img/static/plateBar.svg';
 import {SelectList} from '../components-styled/SelectStyles';
@@ -40,7 +50,7 @@ export default function PlateArea(props) {
   const [selectedPlate, setSelectedPlate] = useState(null);
 
   const onOptionChange = e => {
-    const found = props.plates.find(f => f.id == e.target.value);
+    const found = props.plates.find(f => f.id === e.target.value);
     setSelectedPlate(found)
   }
 

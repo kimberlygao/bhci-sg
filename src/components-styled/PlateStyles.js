@@ -1,6 +1,12 @@
+/*
+  PlateStyles.js
+  styled components grid plate with selection
+*/
+
+
 import styled from 'styled-components';
 
-
+// label for content inside well
 export const WellLabel = styled.label`
   background: white;
   width: 60px;
@@ -9,7 +15,7 @@ export const WellLabel = styled.label`
   align-items: center;
   justify-content: center;
 `
-
+// input to make well selectable
 export const WellInput = styled.input`
   visibility: hidden;
   height: 0;
@@ -29,6 +35,7 @@ export const WellInput = styled.input`
   }
 `;
 
+// well div to group WellLabel & WellInput
 export const WellDiv = styled.div`
   width: 60px;
   height: 60px;
@@ -37,6 +44,7 @@ export const WellDiv = styled.div`
   justify-content: center;
 `
 
+// control well - extension of WellDiv
 export const CtrlWell = styled(WellDiv)`
   background: #F1F1F5;
   border-radius: 4px;
@@ -47,9 +55,12 @@ export const CtrlWell = styled(WellDiv)`
   justify-content: center;
 `
 
+// text used in plate
 export const Text = styled.p`
   margin: 0;
 `
+
+// column labels (numbers)
 export const ColLabel = styled.div`
   width: 60px;
   height: 40px;
@@ -60,6 +71,7 @@ export const ColLabel = styled.div`
   justify-content: center;
 `;
 
+// row labels (letters)
 export const RowLabel = styled.div`
   width: 40px;
   height: 60px;
@@ -69,6 +81,9 @@ export const RowLabel = styled.div`
   align-items: center;
   justify-content: center;
 `
+
+// entire plate table with css grid
+// should eventually use props to define the number of rows + columns
 export const PlateTable = styled.div`
   display: grid;
   grid-template-columns: 40px repeat(12, 60px);

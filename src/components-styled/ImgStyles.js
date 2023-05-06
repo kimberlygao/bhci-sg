@@ -1,3 +1,8 @@
+/*
+  ImgStyles.js
+  styled components for images and icons
+*/
+
 import styled from 'styled-components';
 
 export const Img = styled.img`

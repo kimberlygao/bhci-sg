@@ -28,12 +28,12 @@ function PlateActionArea(props) {
     return (
     <RowTopBorder>
       <Row style={{margin: "32px 0px 0px 20px"}}>
-      <Text20SB>{props.plate.name}</Text20SB>
-    </Row>
-    <Row>
-      <Img src={plate00}></Img>
-    </Row>
-      </RowTopBorder>)
+        <Text20SB>{props.plate.name}</Text20SB>
+      </Row>
+      <Row>
+        <Img src={plate00}></Img>
+      </Row>
+    </RowTopBorder>)
   } else if (props.plate.status === "02") {
     return (
     <RowTopBorder>

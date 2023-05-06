@@ -12,7 +12,7 @@ export const Row = styled.div`
 `
 
 // row div but with gray top border for visual divider
-export const RowTopBorder = styled(Row)`
+export const RowTopBorder = styled.div`
   border-top: 1px solid #C5C5C8;
 `
 
